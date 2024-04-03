@@ -1,0 +1,135 @@
+EEEE
+======================================================================
+ERROR: testAddition1 (__main__.TestAddition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\jmunr\Desktop\COMP 5710\workshop1-req\test.py", line 5, in testAddition1
+    self.assertEqual(3, source.performAdd(2, 1), "Error in implementation.")
+NameError: name 'source' is not defined
+
+======================================================================
+ERROR: testAddition2 (__main__.TestAddition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\jmunr\Desktop\COMP 5710\workshop1-req\test.py", line 8, in testAddition2
+    self.assertEqual(30, source.performAdd(20, 10), "Error in implementation.")
+NameError: name 'source' is not defined
+
+======================================================================
+ERROR: testMult1 (__main__.TestMult)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\jmunr\Desktop\COMP 5710\workshop1-req\test.py", line 16, in testMult1
+    self.assertEqual(5, source.performMult(5, 1), "Error in implementation.")
+NameError: name 'source' is not defined
+
+======================================================================
+ERROR: testSub1 (__main__.TestSub)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\jmunr\Desktop\COMP 5710\workshop1-req\test.py", line 12, in testSub1
+    self.assertEqual(3, source.performSub(6, 3), "Error in implementation.")
+NameError: name 'source' is not defined
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (errors=4)
+
+
+
+..E.
+======================================================================
+ERROR: testMult1 (__main__.TestMult)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\jmunr\Desktop\COMP 5710\workshop1-req\test.py", line 17, in testMult1
+    self.assertEqual(5, source.performMult(5, 1), "Error in implementation.")
+AttributeError: module 'source' has no attribute 'performMult'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (errors=1)
+
+
+
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK
+
+
+
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
+
+
+
+..E...
+======================================================================
+ERROR: testDiv1 (__main__.TestDiv)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\jmunr\Desktop\COMP 5710\workshop1-req\test.py", line 23, in testDiv1
+    self.assertEqual(2, source.performDiv(10, 5), "Error in implementation.")
+AttributeError: module 'source' has no attribute 'performDiv'
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+FAILED (errors=1)
+
+
+
+..F...
+======================================================================
+FAIL: testDiv1 (__main__.TestDiv)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\jmunr\Desktop\COMP 5710\workshop1-req\test.py", line 23, in testDiv1
+    self.assertEqual(2, source.performDiv(10, 5), "Error in implementation.")
+AssertionError: 2 != 8 : Error in implementation.
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+FAILED (failures=1)
+
+
+
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK
+
+
+
+...E...
+======================================================================
+ERROR: testDiv2 (__main__.TestDiv)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\jmunr\Desktop\COMP 5710\workshop1-req\test.py", line 25, in testDiv2
+    self.assertEqual("Error: Cannot Divide by Zero", source.performDiv(10, 0), "Error in implementation.")
+  File "c:\Users\jmunr\Desktop\COMP 5710\workshop1-req\source.py", line 12, in performDiv
+    return a / b
+ZeroDivisionError: division by zero
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+FAILED (errors=1)
+
+
+
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK
