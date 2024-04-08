@@ -6,18 +6,24 @@ import mnist
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten
 from tensorflow.keras.utils import to_categorical
+import myLogger
 
 def readData():
+    logObj  = myLogger.giveMeLoggingObject()
     iris = datasets.load_iris()
     print(type(iris.data), type(iris.target))
     X = iris.data
     Y = iris.target
     df = pd.DataFrame(X, columns=iris.feature_names)
     print(df.head())
+    # Since poisoning attacks focus on injecting erronous data into the dataset,
+    # I am going to log the data that is being read by the ML code.
+    logObj.info('Dataset file to be read:\n %s\n', df.head())
 
     return df 
 
 def makePrediction():
+    logObj  = myLogger.giveMeLoggingObject()
     iris = datasets.load_iris()
     knn = KNeighborsClassifier(n_neighbors=6)
     knn.fit(iris['data'], iris['target'])
@@ -26,7 +32,11 @@ def makePrediction():
         [3.4, 2.0, 1.1, 4.8],
     ]
     prediction = knn.predict(X)
-    print(prediction)    
+    print(prediction)
+    # Since model tricking occurs when models are attacked and cause them to make
+    # erronous results/affect prediction performace, I am going to log the
+    # predictions that are made by the ML code.
+    logObj.info('Prediction made by algorithm: %s\n', prediction)
 
 def doRegression():
     diabetes = datasets.load_diabetes()
