@@ -4,9 +4,13 @@ import csv
 # Reading CSV file with secrets
 with open ('secrets.csv') as csvfile:
     print('Reading CSV file...')
+    
+    # Arrays to store CSV values
     variables_list = []
     values_list = []
+
     reader = csv.reader(csvfile, delimiter=',')
+
     line_count = 0
     for row in reader:
         if line_count == 0:
@@ -17,6 +21,8 @@ with open ('secrets.csv') as csvfile:
             variables_list.append(row[0])
             values_list.append(row[1])
             line_count += 1
+
+
     print(f'Reading done. Processed {line_count} lines.')
     print(f'Variables List: {variables_list} \n Values List: {values_list}')
 
